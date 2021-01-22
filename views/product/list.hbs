@@ -1,0 +1,28 @@
+<h3><a href="/products" class="btn btn-secondary"><i class="fa fa-plus"></i> Create New</a> Category List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Category ID</th>
+            <th>Category Name</th>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.categoryID}}</td>
+            <td>{{this.categoryName}}</td>
+            <td>{{this.productID}}</td>
+            <td>{{this.productName}}</td>
+            <td>
+                <a href="/products/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/products/delete/{{this._id}}"
+                    onclick="return confirm('Are you sure want to delete this record ?')"><i class="fa fa-trash fa-lg"
+                        aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
